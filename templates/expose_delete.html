@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!--This is for security purposes -->
+{% load crispy_forms_tags %}
+
+{%block content%}
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;">
+
+                <div class="acctitle"><i class="acc-closed icon-remove-3"></i><i class="acc-open icon-remove"></i>Delete your Expose: {{ expose.title }}</div>
+                <div class="acc_content clearfix">
+                    <form id="expose-update-form" name="expose-update-form" class="nobottommargin" action="#" method="post">
+                    {% csrf_token %}
+                    <p>Are you sure you want to delete your expose: {{ expose.title }}</p>
+                    <button class="button button-3d button-black nomargin" id="signup-form-submit" name="signup-form-submit" value="signup">delete</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
+{%endblock content%}

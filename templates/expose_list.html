@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+<!--This is for security purposes -->
+{% load crispy_forms_tags %}
+
+{%block content%}
+    <section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Posts
+					============================================= -->
+					<div id="posts" class="post-grid grid-container clearfix" data-layout="fitRows">
+
+                        {% for expose in object_list %}
+
+
+						<div class="entry clearfix">
+
+							<div class="entry-title">
+								<h2><a href="{% url 'expose_detail' expose.pk %}">{{ expose.title }}</a></h2>
+
+							</div>
+							<ul class="entry-meta clearfix">
+								<li><i class="icon-calendar3"></i> {{ expose.date }}</li>
+                                <li> <a href="{% url 'expose_edit' expose.pk %}"> <i class="acc-open icon-edit"></i> </a> </li>
+                                <li> <a href="{% url 'expose_delete' expose.pk %}"> <i class="acc-open icon-remove"></i> </a> </li>
+
+							</ul>
+							<div class="entry-content">
+								<p>{{ expose.description }}</p>
+								<a href="blog-single.html" class="more-link">Show Expose</a>
+							</div>
+						</div>
+
+                        {% endfor %}
+
+
+					</div><!-- #posts end -->
+
+					<!-- Pagination
+					============================================= -->
+					<ul class="pagination nobottommargin">
+						<li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+						<li class="page-item active"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+{%endblock content%}

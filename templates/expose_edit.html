@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!--This is for security purposes -->
+{% load crispy_forms_tags %}
+
+{%block content%}
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;">
+
+                <div class="acctitle"><i class="acc-closed icon-edit-3"></i><i class="acc-open icon-edit"></i>Edit your Expose</div>
+                <div class="acc_content clearfix">
+                    <form id="expose-update-form" name="expose-update-form" class="nobottommargin" action="#" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="button button-3d button-black nomargin" id="signup-form-submit" name="signup-form-submit" value="signup">update</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
+{%endblock content%}

@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+<!--This is for security purposes -->
+{% load crispy_forms_tags %}
+
+{%block content%}
+    <section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Post Content
+					============================================= -->
+					<div class="postcontent nobottommargin clearfix">
+
+						<div class="single-post nobottommargin">
+
+							<!-- Single Post
+							============================================= -->
+							<div class="entry clearfix">
+
+								<!-- Entry Title
+								============================================= -->
+								<div class="entry-title">
+									<h2> {{ object.title }}</h2>
+								</div><!-- .entry-title end -->
+
+								<!-- Entry Meta
+								============================================= -->
+								<ul class="entry-meta clearfix">
+									<li><i class="icon-calendar3"></i> {{ object.date }}</li>
+                                    <li>
+                                        <a href="{% url 'expose_edit' expose.pk %}">
+                                            edit expose <i class="acc-open icon-edit"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'expose_delete' expose.pk %}">
+                                            remove expose <i class="acc-open icon-remove"></i>
+                                        </a>
+                                    </li>
+
+								</ul><!-- .entry-meta end -->
+
+								<!-- Entry Content
+								============================================= -->
+								<div class="entry-content notopmargin">
+									<!-- Entry Image
+									============================================= -->
+									<div class="entry-image alignleft">
+										<embed src="http://example.com/the.pdf" width="1000" height="500" type="application/pdf">
+									</div><!-- .entry-image end -->
+
+									<p> {{ object.description }} </p>
+									<!-- Post Single - Content End -->
+
+
+									<!-- Post Single - Share
+									============================================= -->
+
+								</div>
+							</div><!-- .entry end -->
+
+
+							<h4>Recommended Investors:</h4>
+
+							<div class="related-posts clearfix">
+
+								<div class="col_half nobottommargin">
+
+									<div class="mpost clearfix">
+										<div class="entry-image">
+											<a href="#"><img src="images/blog/small/10.jpg" alt="Blog Single"></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">This is an Image Post</a></h4>
+											</div>
+											<ul class="entry-meta clearfix">
+												<li><i class="icon-calendar3"></i> 10th July 2014</li>
+												<li><a href="#"><i class="icon-comments"></i> 12</a></li>
+											</ul>
+											<div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+										</div>
+									</div>
+
+									<div class="mpost clearfix">
+										<div class="entry-image">
+											<a href="#"><img src="images/blog/small/20.jpg" alt="Blog Single"></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">This is a Video Post</a></h4>
+											</div>
+											<ul class="entry-meta clearfix">
+												<li><i class="icon-calendar3"></i> 24th July 2014</li>
+												<li><a href="#"><i class="icon-comments"></i> 16</a></li>
+											</ul>
+											<div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col_half nobottommargin col_last">
+
+									<div class="mpost clearfix">
+										<div class="entry-image">
+											<a href="#"><img src="images/blog/small/21.jpg" alt="Blog Single"></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">This is a Gallery Post</a></h4>
+											</div>
+											<ul class="entry-meta clearfix">
+												<li><i class="icon-calendar3"></i> 8th Aug 2014</li>
+												<li><a href="#"><i class="icon-comments"></i> 8</a></li>
+											</ul>
+											<div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+										</div>
+									</div>
+
+									<div class="mpost clearfix">
+										<div class="entry-image">
+											<a href="#"><img src="images/blog/small/22.jpg" alt="Blog Single"></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">This is an Audio Post</a></h4>
+											</div>
+											<ul class="entry-meta clearfix">
+												<li><i class="icon-calendar3"></i> 22nd Aug 2014</li>
+												<li><a href="#"><i class="icon-comments"></i> 21</a></li>
+											</ul>
+											<div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+						</div>
+
+					</div><!-- .postcontent end -->
+
+					<!-- Sidebar
+					============================================= -->
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+{%endblock content%}

@@ -15,13 +15,14 @@
                                 {% if user.is_authenticated %}
                                 <h2 data-animate="fadeInUp">Hi {{ user.username }}</h2>
                                 <p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Find the perfect investor for any Real Estate Investment</p>
-                                <a href="#" data-animate="fadeInUp" class="button button-desc"><div>Upload your Expose</div><span>Free Forever, Instant Feedback</span></a>
+                                <a href="{% url 'expose_new' %}" data-animate="fadeInUp" class="button button-desc"><div>Upload your Expose</div><span>Instantly find the perfect Investor</span></a>
 
                                 {% else %}
                                 <h2 data-animate="fadeInUp">Welcome to Ex.Ai</h2>
                                 <p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Find the perfect investor for any Real Estate Investment</p>
                                 <a href="{% url 'signup' %}" data-animate="fadeInUp" class="button button-desc"><div>Sign up now</div><span>Free Forever, Instant Feedback</span></a>
                                 {% endif %}
+
                             </div>
                         </div>
                     </div>
@@ -30,7 +31,7 @@
                             <div class="slider-caption slider-caption-center">
                                 <h2 data-animate="fadeInUp">Upload your Expose</h2>
                                 <p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
-                                <a href="#" data-animate="fadeInUp" class="button button-desc"><div>Create your Font Icon</div><span>Free Forever, Instant Activation</span></a>
+                                <a href="{% url 'expose_new' %}" data-animate="fadeInUp" class="button button-desc"><div>Create your Font Icon</div><span>Free Forever, Instant Activation</span></a>
                             </div>
                         </div>
                         <div class="video-wrap">

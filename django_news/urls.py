@@ -23,6 +23,6 @@ urlpatterns = [
     path('users/', include("users.urls")), # from our custom class we need to provide a signup
     path('users/', include("django.contrib.auth.urls")), # we are using log in and log out from the base class
     path('', include("pages.urls")),
-
+    path('exposes/', include("exposes.urls")),
 
 ]
