@@ -1,11 +1,36 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+
 <!--This is for security purposes -->
 
 {%block content%}
-    <h2> Log In </h2>
-    <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type = "submit">Log In</button>
-    </form>
+
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;">
+
+                <div class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Login to your Account</div>
+                <div class="acc_content clearfix">
+                    <form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <p></p>
+                    <button type = "submit">Log In</button>
+
+                    </form>
+
+                </div>
+                <div class="acctitle"><i class="acc-closed icon-user4"></i><i class="acc-open icon-ok-sign"></i>New Signup? Register for an Account</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
 {%endblock content%}
