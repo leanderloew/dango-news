@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.views.generic import TemplateView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/', include("users.urls")), # from our custom class we need to provide a signup
+    path('users/', include("django.contrib.auth.urls")), # we are using log in and log out from the base class
+
     path('', TemplateView.as_view(template_name="home.html"), name="home"),
 
 ]

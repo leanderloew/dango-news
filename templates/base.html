@@ -80,11 +80,11 @@
 
                             {% if user.is_authenticated %}
 							</li>
-							<li ><a href="#"><div>Log In</div></a>
+							<li ><a href="{% url 'logout' %}"><div>Log Out</div></a>
 							</li>
                             {% else %}
 							</li>
-							<li ><a href="#"><div>Log In</div></a>
+							<li ><a href="{% url 'login' %}"><div>Log In</div></a>
 							</li>
                             {% endif %}
 
