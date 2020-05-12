@@ -74,16 +74,22 @@
 								</ul>
 							</li>
 
+                            {% if user.is_authenticated %}
 							<li class="mega-menu"><a href="#"><div>Investors</div></a>
 							</li>
-							<li class="mega-menu"><a href="{% url 'expose_list' %}"><div>Exposes</div></a>
+							<li class="current"><a href="{% url 'expose_list' %}"><div>Exposes</div></a>
+                                <ul>
+									<li><a href="{% url 'expose_list' %}"><div>List Exposes</div></a>
+									</li>
+                                    <li><a href="{% url 'expose_new' %}"><div>New Expose</div></a>
+									</li>
+								</ul>
+                            </li>
 
-                            {% if user.is_authenticated %}
-							</li>
+
 							<li ><a href="{% url 'logout' %}"><div>Log Out</div></a>
 							</li>
                             {% else %}
-							</li>
 							<li ><a href="{% url 'login' %}"><div>Log In</div></a>
 							</li>
                             {% endif %}

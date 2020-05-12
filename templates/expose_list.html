@@ -15,7 +15,7 @@
 
                         {% for expose in object_list %}
 
-
+                        {% if user == expose.author %}
 						<div class="entry clearfix">
 
 							<div class="entry-title">
@@ -33,6 +33,7 @@
 								<a href="blog-single.html" class="more-link">Show Expose</a>
 							</div>
 						</div>
+                        {% endif %}
 
                         {% endfor %}
 
